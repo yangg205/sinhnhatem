@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #FF9A8B, #FF6A88, #FF99AC);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+/* Tạo hiệu ứng nhấp nháy */
+@keyframes blinkingText {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blinkingText 1s infinite; /* Lặp lại hiệu ứng */
+    color: white; /* Màu chữ */
+    font-size: 48px; /* Kích thước chữ */
+}
+
+.greeting {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: -30px; /* Di chuyển chữ lên trên 10px */
+    z-index: 0;
+}
+
+.img {
+    margin: 20px auto; /* Canh giữa ảnh */
+}
+
+.img__1 {
+    border-radius: 16px;
+    width: 200px;
+    height: 250px;
+}
+
+.message {
+    margin-top: 40px;
+    font-size: 24px;
+    color: white;
+}
+
+/* Hình trái tim */
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    cursor: pointer;
+    transform: rotate(-45deg); /* Quay trái tim để tạo hình */
+    z-index: 10; /* Đặt z-index cao nhất để trái tim luôn nằm trên các phần tử khác */
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.heart::before {
+    top: -25px; /* Di chuyển phần trên của trái tim lên trên */
+    left: 0;
+}
+
+.heart::after {
+    left: 25px; /* Di chuyển phần bên phải của trái tim sang phải */
+    top: 0;
+}
+
+/* Hiệu ứng bay lên */
+@keyframes rise {
+    from {
+        transform: translateY(100vh) rotate(-45deg); /* Bắt đầu từ dưới đáy */
+    }
+    to {
+        transform: translateY(-100vh) rotate(-45deg); /* Bay lên ra khỏi màn hình */
+    }
+}
+
+.heart {
+    animation: rise 7s ease-in forwards; /* Áp dụng hiệu ứng bay lên */
+}
+
+/* Điều chỉnh để xem tốt trên điện thoại */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 36px;
+    }
+
+    .cake {
+        width: 100px;
+        height: 150px;
+    }
+
+    .layer {
+        height: 45px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+}
+#play-music {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #FF6A88;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#play-music:hover {
+    background-color: #FF99AC;
+}
+
