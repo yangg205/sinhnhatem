@@ -52,11 +52,15 @@ body {
 }
 
 .message {
+    opacity: 0;
     margin-top: 40px;
     font-size: 24px;
     color: white;
+    transition: opacity 5s ease-in-out;
 }
-
+.show-text{
+    opacity: 1;
+}
 /* Hình trái tim */
 .heart {
     position: absolute;

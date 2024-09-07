@@ -56,6 +56,8 @@ function spawnHearts() {
 
 // Bắt đầu tạo trái tim
 spawnHearts();
+    const messageText = document.querySelector('.message');
+        messageText.classList.add('show-text');
         });
     } else {
         audio.autoplay = true; // Tự động phát nhạc trên máy tính
