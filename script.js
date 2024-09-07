@@ -58,6 +58,15 @@ function spawnHearts() {
 spawnHearts();
     const messageText = document.querySelector('.message');
         messageText.classList.add('show-text');
+        showText(messageText, messageText.innerHTML, 0, 100);
+        function showText(element, text, index, interval) {
+            if (index < text.length) {
+                element.innerHTML = text.substring(0, index + 1); // Hiển thị từng ký tự
+                setTimeout(() => {
+                    showText(element, text, index + 1, interval);
+                }, interval); // Điều chỉnh khoảng thời gian giữa các ký tự
+            }
+        }
         });
     } else {
         audio.autoplay = true; // Tự động phát nhạc trên máy tính

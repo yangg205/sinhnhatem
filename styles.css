@@ -56,7 +56,7 @@ body {
     margin-top: 40px;
     font-size: 36px;
     color: white;
-    transition: opacity 5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 .show-text{
     opacity: 1;
